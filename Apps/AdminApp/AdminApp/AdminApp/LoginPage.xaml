@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminApp.LoginPage"
+              xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Delta Cubes' Smart Mirror"
+                   FontSize="Large"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="Admins Only"
+                   FontSize="Large"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"/>
+            <Entry x:Name="usernameEntry" Placeholder="Username" HorizontalOptions="CenterAndExpand" WidthRequest="300" TextChanged="UsernameTextChanged" />
+            <Entry x:Name="passwordEntry" Placeholder="Password" HorizontalOptions="CenterAndExpand" WidthRequest="300" IsPassword="True" />
+
+            <Button HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Margin="15" WidthRequest="150" Text="Login" Clicked="LoginButtonClick"/>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

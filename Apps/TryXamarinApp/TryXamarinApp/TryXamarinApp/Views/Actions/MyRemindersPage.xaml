@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TryXamarinApp.Views.Actions.MyRemindersPage"
+             Title="My Reminder" >
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="inboxListView" 
+                      Margin="5"
+                      BackgroundColor="#F0F0F0"
+                      HasUnevenRows="True"/>
+            <Button 
+                HorizontalOptions="CenterAndExpand" 
+                WidthRequest="150" 
+                Text="Delete Reminder" 
+                VerticalOptions="EndAndExpand"
+                Clicked="DeleteButtonClick"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminApp.Actions.ManageAdminsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="adminsListView" 
+                      Margin="5"
+                      BackgroundColor="#F0F0F0"
+                      HasUnevenRows="True"/>
+            <StackLayout Orientation="Horizontal">
+                <Button 
+                    Margin="5"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="150" 
+                    Text="Delete Admin" 
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="DeleteButtonClick"
+                    />
+                <Button 
+                    Margin="5"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="150" 
+                    Text="Add Admin" 
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="AddButtonClick"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

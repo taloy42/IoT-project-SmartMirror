@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminApp.LoadingPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="messageLabel" Text="Loading..." FontSize="Title" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"/>
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="true" VerticalOptions="CenterAndExpand" Scale="2"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

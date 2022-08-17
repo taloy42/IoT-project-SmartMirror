@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TryXamarinApp.views.SignUpPage"
+             Title="Sign Up">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="userNameEntry" Placeholder="Username"           HorizontalOptions="CenterAndExpand" WidthRequest="300" TextChanged="UsernameTextChanged"/>
+            <Entry x:Name="firstNameEntry" Placeholder="First Name"           HorizontalOptions="CenterAndExpand" WidthRequest="300" IsPassword="False" TextChanged="NameTextChanged"/>
+            <Entry x:Name="lastNameEntry" Placeholder="Last Name"   HorizontalOptions="CenterAndExpand" WidthRequest="300" IsPassword="False" TextChanged="NameTextChanged"/>
+            <Entry x:Name="passwordEntry" Placeholder="Password"   HorizontalOptions="CenterAndExpand" WidthRequest="300" IsPassword="True" />
+            <Entry x:Name="verifyEntry" Placeholder="Validate Password"   HorizontalOptions="CenterAndExpand" WidthRequest="300" IsPassword="True" />
+            <Entry x:Name="personGroupIdEntry" Placeholder="Person Group Id (trypersongroupid)"        HorizontalOptions="CenterAndExpand" WidthRequest="300" />
+
+            <Button 
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="20" 
+                WidthRequest="150" 
+                Margin="50"
+                Text="Register" 
+                Clicked="RegisterButtonClick" 
+                VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TryXamarinApp.Views.Actions.SetReminderPage"
+             Title="Set Reminder">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label 
+                    Text="Start Time:"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    Grid.Row="0" Grid.Column="0"/>
+                <DatePicker 
+                    x:Name="startDatePicker"
+                    HorizontalOptions="Center" 
+                    Grid.Row="0" Grid.Column="1"/>
+
+                <TimePicker 
+                    x:Name="startTimePicker"
+                    HorizontalOptions="Center" 
+                    Grid.Row="0" Grid.Column="2"/>
+                <Label 
+                    Text="End Time:"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    Grid.Row="1" Grid.Column="0"/>
+                <DatePicker 
+                    x:Name="endDatePicker"
+                    HorizontalOptions="Center" 
+                    Grid.Row="1" Grid.Column="1"/>
+
+                <TimePicker 
+                    x:Name="endTimePicker"
+                    HorizontalOptions="Center" 
+                    Grid.Row="1" Grid.Column="2"/>
+            </Grid>
+            <Label Text="Reminder:"
+                   FontSize="20"
+                   HorizontalOptions="CenterAndExpand"
+                   Grid.Row="2" />
+            <Editor
+                x:Name="reminderEditor"
+                Placeholder="reminder"
+                Grid.Row="3" 
+                BackgroundColor="#F0F0F0"/>
+            <Button Text="Send"
+                    Clicked="Button_Clicked"
+                    Grid.Row="4" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

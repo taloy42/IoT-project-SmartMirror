@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TryXamarinApp.Views.Actions.LeaveMessagePage"
+             Title="Leave Message">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Grid">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="Choose Contact:"
+                HorizontalOptions="CenterAndExpand"
+                   Grid.Row="0"/>
+            <ListView x:Name="contactsListView" 
+                      Grid.Row="1"
+                      Margin="5"
+                      BackgroundColor="#F0F0F0"
+                      HasUnevenRows="True"/>
+            
+            <Label Text="Message:"
+                   HorizontalOptions="CenterAndExpand"
+                   Grid.Row="2" />
+            <Editor x:Name="messageEditor"
+                Placeholder="message"
+                   Grid.Row="3" 
+                    BackgroundColor="#F0F0F0"/>
+            <Button Text="Send"
+                    Grid.Row="4" 
+                    Clicked="Button_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

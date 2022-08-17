@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TryXamarinApp.views.SettingsPage"
+             Title="Settings">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.ColumnSpan="2" HorizontalOptions="Center" Grid.Row="0" WidthRequest="150" Clicked="ChangePersonGroupButtonClick" Text="Change Person Group"/>
+            <Button Grid.ColumnSpan="2" HorizontalOptions="Center" Grid.Row="1" WidthRequest="150" Clicked="ChangePasswordButtonClick" Text="Change Password"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

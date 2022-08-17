@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminApp.ActionPage"
+             Title="{Binding username,StringFormat='Hello {0}!'}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button 
+                HorizontalOptions="CenterAndExpand" 
+                WidthRequest="150"
+                Text="Manage Person Groups" 
+                Clicked="PersonGroupsButtonClick" />
+            <Button 
+                HorizontalOptions="CenterAndExpand"                 
+                WidthRequest="150"
+                Text="Manage Admins" 
+                Clicked="AdminsButtonClick" />
+            <Button 
+                HorizontalOptions="CenterAndExpand" 
+                 
+                WidthRequest="150" 
+                Margin="0, 0, 0, 10"
+                Text="Change Password" 
+                Clicked="ChangePasswordButtonClick" 
+                VerticalOptions="EndAndExpand"/>
+
+            <Button 
+                HorizontalOptions="CenterAndExpand" 
+                 
+                WidthRequest="150" 
+                Margin="0, 0, 0, 50"
+                Text="Log Out" 
+                Clicked="LogoutButtonClick" 
+                VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

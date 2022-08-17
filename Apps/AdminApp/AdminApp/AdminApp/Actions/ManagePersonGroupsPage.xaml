@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AdminApp.Actions.ManagePersonGroupsPage"
+              xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+             Title="Manage Person Groups">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+            <ListView x:Name="personGroupsListView" 
+                      Margin="5"
+                      BackgroundColor="#F0F0F0"
+                      HasUnevenRows="True" />
+            <StackLayout Orientation="Horizontal">
+                <Button 
+                    Margin="5"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="150" 
+                    Text="Delete Person Group" 
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="DeleteButtonClick"
+                    />
+                <Button 
+                    Margin="5"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="150" 
+                    Text="Add Person Group" 
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="AddButtonClick"
+                    />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

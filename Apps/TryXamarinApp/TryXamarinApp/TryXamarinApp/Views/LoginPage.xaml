@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TryXamarinApp.views.LoginPage"
+             Title="Login">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Delta Cubes' Smart Mirror!"
+                   FontSize="Large"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Image Source="DeltaCubes"
+                   HorizontalOptions="Center"
+                   WidthRequest="300" />
+
+            <Entry x:Name="username" Placeholder="Username" HorizontalOptions="CenterAndExpand" WidthRequest="300" TextChanged="UsernameTextChanged" />
+            <Entry x:Name="password" Placeholder="Password" HorizontalOptions="CenterAndExpand" WidthRequest="300" IsPassword="True" />
+
+            <Button HorizontalOptions="CenterAndExpand" WidthRequest="150" Text="Login" Clicked="LoginButtonClick"/>
+            <Button HorizontalOptions="CenterAndExpand" WidthRequest="150" Text="Detect Me!" Clicked="DetectButtonClick"/>
+            <Button HorizontalOptions="CenterAndExpand" WidthRequest="150" Text="Change Person Group" Clicked="ChangePersonGroupButtonClick"/>
+
+            <Label Margin="50" Text="Not Registered? Sign Up" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped"
+                        NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
