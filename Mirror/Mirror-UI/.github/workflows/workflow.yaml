@@ -1,0 +1,68 @@
+on:
+  push:
+    branches:
+      - "main"
+      - "dev"
+      - "devopsv2"
+
+env:
+  REPO_NAME: mirror-iot
+  DOCKER_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+  DOCKER_PASSWORD: ${{secrets.DOCKERHUB_TOKEN}}
+
+jobs:
+  # test-backend:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Clone repository
+  #       uses: actions/checkout@v2
+  #     - name: Use Node.js 12.x
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 16.x
+  #     - name: Install dependencies backend
+  #       run: cd App && npm install
+  #     # - name: test backend
+  #     #   run: cd App && npm test
+    
+  
+  # test-frontend:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Clone repository
+  #       uses: actions/checkout@v2
+  #     - name: Use Node.js 12.x
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 16.x
+  #     - name: Install dependencies frontend
+  #       run: cd App && cd frontend && npm install
+  #     # - name: test frontend
+  #     #   run: cd App && cd frontend && npm test
+  
+
+  build-push-app:
+    # needs: [test-backend, test-frontend]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 # first action : checkout source code
+    - name: docker login
+      run: | # log into docker hub account
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin  
+    - name: Build the Docker image # push The image to the docker hub
+      run: docker build . --file Dockerfile.app --tag $DOCKER_USERNAME/$REPO_NAME-app-${{ github.ref_name }}:latest
+    - name: Docker Push
+      run: docker push $DOCKER_USERNAME/$REPO_NAME-app-${{ github.ref_name }}:latest
+  
+  build-push-WS:
+    # needs: [test-backend, test-frontend]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 # first action : checkout source code
+    - name: docker login
+      run: | # log into docker hub account
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin  
+    - name: Build the Docker image # push The image to the docker hub
+      run: docker build . --file Dockerfile.prod --tag $DOCKER_USERNAME/$REPO_NAME-prod-${{ github.ref_name }}:latest
+    - name: Docker Push
+      run: docker push $DOCKER_USERNAME/$REPO_NAME-prod-${{ github.ref_name }}:latest

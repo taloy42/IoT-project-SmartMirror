@@ -1,0 +1,16 @@
+### STAGE 1: Build ###
+FROM node:18.7-alpine as build
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY ./App .
+WORKDIR /app/frontend
+RUN npm install react-icons
+RUN npm install 
+#RUN npm install react-icons --save
+RUN npm run build
+
+### STAGE 2: Production Environment ###
+FROM nginx:1.23.1-alpine
+COPY --from=build /app/frontend/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

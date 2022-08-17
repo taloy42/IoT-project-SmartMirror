@@ -1,0 +1,25 @@
+services:
+  prod:
+    image: local:prod 
+    ports: 
+    - "3000:80"
+    networks:
+     shared:
+        ipv4_address: 10.6.6.5
+  be:
+    image: local:be #Local TEST
+    ports: 
+    - "3001:3001"
+    networks:
+     shared:
+        ipv4_address: 10.6.6.6
+
+
+networks:
+  shared:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.6.6.6/24
+         gateway: 10.6.6.1
+    
