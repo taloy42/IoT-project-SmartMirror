@@ -1,4 +1,4 @@
-# IoT-ptoject-SmartMirror
+# IoT-project-SmartMirror
 
 ## Build local image
 Run this from mirror-ui directory.
