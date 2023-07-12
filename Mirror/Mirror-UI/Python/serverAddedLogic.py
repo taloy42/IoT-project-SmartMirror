@@ -106,8 +106,6 @@ async def hello(websocket):
 
 
 
-
-
                     print("just after sending nobody's id")
                     detected_user = nobody_id
                     detected_username="nobody"
